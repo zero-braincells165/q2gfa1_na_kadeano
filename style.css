@@ -12,6 +12,7 @@ body {
     font-family: 'Titillium Web', sans-serif;
     background-color: #1F1C2C;
     color: #B2B2B2;
+    margin: 0;
 }
 
 /* Links styling */
@@ -30,8 +31,8 @@ nav {
     background-color: #2A243B;
 }
 
-/* Page title styling */
-.pagetitle {
+/* Logo styling */
+.logo {
     color: #BBCCE2;
     font-size: 2.5vw;
 }
@@ -41,6 +42,9 @@ nav {
     display: none;
     font-size: 2vw;
     cursor: pointer;
+    color: #BBCCE2;
+    background: none;
+    border: none;
 }
 
 /* Links within navigation styling */
@@ -55,45 +59,36 @@ nav {
     padding: 1vw 2vw;
 }
 
-/* Responsive styling for smaller screens */
+/* Mobile styles for the navigation menu */
 @media screen and (max-width: 600px) {
+    .links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #2A243B;
+    }
+
+    .links a {
+        padding: 1vw 2vw;
+    }
+
     .menu-icon {
         display: block;
     }
 
-    .links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 6.5vw;
-        left: 0;
-        right: 0;
-        background-color: #2A243B;
-        text-align: center;
-    }
-
-    .links a {
-        padding: 1.5vw 2vw;
-        border-bottom: 1px solid #6D6870;
-    }
-
-    .links a:last-child {
-        border-bottom: none;
-    }
-
-    .links.active {
+    .menu-icon:hover + .links {
         display: flex;
-    }
-
-    nav:hover .pagetitle {
-        background-color: #222B38;
     }
 }
 
 /* Video styling */
 .vid {
-    width: 100vw;
-    height: 56.25vw;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     position: absolute;
     z-index: -1;
@@ -108,7 +103,7 @@ nav {
 
 /* Banner styling */
 .banner {
-    height: 56.25vw;
+    height: auto;
     background-color: rgba(17, 3, 59, 0.548);
     z-index: 9;
 }
