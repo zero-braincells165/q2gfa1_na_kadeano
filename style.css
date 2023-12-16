@@ -1,114 +1,160 @@
+/* Importing fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Serif+Display:ital,wght@0,100;0,300;1,100&family=Noto+Serif:wght@800&family=Roboto+Mono:ital,wght@1,300&family=Titillium+Web&display=swap');
-*{
+
+/* Resetting default margin and including padding and border in element's total width and height */
+* {
     margin: 0;
+    box-sizing: border-box;
 }
-a{
+
+/* Body styling */
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #1F1C2C; /* Dark mysterious background color */
+    color: #B2B2B2; /* Light gray text color */
+}
+
+/* Links styling */
+a {
     text-decoration: none;
-    color: rgb(230, 236, 253);
+    color: #E6ECFD; /* Light blue link color */
     font-size: 1.5vw;
 }
+
+/* Navigation styling */
 nav {
     display: flex;
-    justify-content: space-around ;
-    padding-bottom: 5vw;
-    padding-top: 4vw;
-    background-color: rgb(42, 36, 59);
-    color: rgb(11, 2, 34);
-}
-.links a{
-   margin-left: 6vw;
-
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 1.5vw; /* Decreased padding for a cleaner look */
+    padding-top: 1.5vw; /* Decreased padding for a cleaner look */
+    background-color: #2A243B; /* Dark purple navigation bar */
 }
 
-.pagetitle{
-    color: rgb(188, 204, 226);
-    ;
-    font-size: 2vw;
-    margin-right: 0%;
+/* Links within navigation styling */
+.links a {
+    margin-left: 1.5vw; /* Decreased margin for a cleaner look */
+    display: inline-block;
+    text-align: center;
+    padding: 1vw 1.5vw; /* Increased padding for a cleaner look */
 }
-@media screen and ( max-width: 600px )
-{
-    nav{
-        font-family: 'Titillium Web', sans-serif;
-        position: relative;
-        font-size: larger;
-    }
-    .pagetitle{
-        padding: 2vw;
-        color: rgb(82, 148, 138);
-        
-    }
-    .links{
-        display: none;
-        position: absolute;
-        min-width: 160px;
-        box-shadow: rgb(121, 116, 150);
-        z-index: 1;
-        background-color: rgb(51, 29, 63)
-        
-    }
-    .links a{
-        color: rgb(0, 0, 0);
-        padding: 24px 32px;
-        display: block;
-    }
-    .links a:hover{background-color: rgb(109, 104, 112)}
-    nav:hover .links{display: block;}
-    nav:hover .pagetitle{background-color:rgb(34, 43, 56);}
 
+/* Page title styling */
+.pagetitle {
+    color: #BBCCE2; /* Light blue-gray page title color */
+    font-size: 2.5vw;
 }
-.vid{
- width: 100vw;
- height: 66.6vw;
- object-fit: cover;
- position: absolute;
- z-index: -1;
- top: 0;
- left: 0;
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+    .links {
+        min-width: 120px; /* Adjusted min-width for smaller screens */
+        background-color: #331D3F; /* Darker purple background color for links */
+    }
+
+    .links a {
+        color: #FFFFFF; /* White text color for links */
+        padding: 1.5vw 2vw; /* Increased padding for a cleaner look */
+    }
+
+    .links a:hover {
+        background-color: #6D6870; /* Darker purple background color on hover */
+    }
+
+    nav:hover .pagetitle {
+        background-color: #222B38; /* Darker blue-gray background color on hover */
+    }
 }
-.container
-{
-  position: relative;
+
+/* Video styling */
+.vid {
+    width: 100vw;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
 }
-.banner{
-    height: 66.6;
+
+/* Background video styling */
+#vidbg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+/* Container styling */
+.container {
+    position: relative;
+}
+
+/* Banner styling */
+.banner {
+    height: 56.25vw; /* 16:9 aspect ratio */
     background-color: rgba(17, 3, 59, 0.548);
     z-index: 9;
 }
-.bannerhead{
-   text-align: left;
-   padding-top: 10vw;
-   font-family: 'Merriweather', serif;
-   color: rgb(171, 177, 255);
-font-size: 6vw;
-text-align: center;
 
+/* Banner head styling */
+.bannerhead {
+    text-align: left;
+    padding-top: 3vw; /* Adjusted padding for a cleaner look */
+    font-family: 'Merriweather', serif;
+    color: #ABB1FF; /* Light purple banner head color */
+    font-size: 3.5vw; /* Decreased font size for a cleaner look */
+    text-align: center;
 }
-article{
+
+/* Article styling */
+article {
     padding-top: 1vw;
-    color: rgb(175, 181, 255);
-    margin-left: 66.6vw;  
-    font-size: 2vw;
+    color: #AFB5FF; /* Light purple article text color */
+    margin-left: 56.25vw; /* 16:9 aspect ratio */
+    font-size: 1.5vw;
     font-family: 'Roboto Mono', monospace;
 }
 
-#yt{
+/*Footer styling*/
+footer {
+    background-color: #2A243B;
+    padding: 2vw 0; /* Adjusted padding for a cleaner look */
+    text-align: center;
+}
+
+/* Social media icons styling */
+#yt, #twitter, #fb, #soundcloud {
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    margin: 0 1vw; /* Adjusted margin for a cleaner look */
+}
+
+/* YouTube icon styling */
+#yt {
     background: url('Icon/sprite3.png') no-repeat -439px -221px;
-	width: 66px;
-	height: 66px;
 }
-#twitter{
+
+/* Twitter icon styling */
+#twitter {
     background: url('Icon/sprite3.png') no-repeat -66px -72px;
-	width: 67px;
-	height: 66px;
 }
-#fb{
-    background: url('Icon/') no-repeat -439px -146px;
-	width: 66px;
-	height: 66px;
+
+/* Facebook icon styling */
+#fb {
+    background: url('Icon/sprite3.png') no-repeat -439px -146px;
 }
-#soundcloud{
-    background: url('Icon/') no-repeat -587px -72px;
-	width: 66px;
-	height: 66px;
+
+/* SoundCloud icon styling */
+#soundcloud {
+    background: url('Icon/sprite3.png') no-repeat -587px -72px;
+}
+
+/* Favicon styling */
+#favicon {
+    background: url('imgs/sprite3.png') no-repeat -290px -146px;
+    width: 4vw;
+    height: 4vw;
 }
