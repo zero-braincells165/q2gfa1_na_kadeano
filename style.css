@@ -10,14 +10,14 @@
 /* Body styling */
 body {
     font-family: 'Titillium Web', sans-serif;
-    background-color: #1F1C2C; /* Dark mysterious background color */
-    color: #B2B2B2; /* Light gray text color */
+    background-color: #1F1C2C;
+    color: #B2B2B2;
 }
 
 /* Links styling */
 a {
     text-decoration: none;
-    color: #E6ECFD; /* Light blue link color */
+    color: #E6ECFD;
     font-size: 1.5vw;
 }
 
@@ -25,65 +25,80 @@ a {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding-bottom: 1.5vw; /* Decreased padding for a cleaner look */
-    padding-top: 1.5vw; /* Decreased padding for a cleaner look */
-    background-color: #2A243B; /* Dark purple navigation bar */
-}
-
-/* Links within navigation styling */
-.links a {
-    margin-left: 1.5vw; /* Decreased margin for a cleaner look */
-    display: inline-block;
-    text-align: center;
-    padding: 1vw 1.5vw; /* Increased padding for a cleaner look */
+    justify-content: space-between;
+    padding: 1.5vw;
+    background-color: #2A243B;
 }
 
 /* Page title styling */
 .pagetitle {
-    color: #BBCCE2; /* Light blue-gray page title color */
+    color: #BBCCE2;
     font-size: 2.5vw;
+}
+
+/* Menu icon styling */
+.menu-icon {
+    display: none;
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+/* Links within navigation styling */
+.links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.links a {
+    text-align: center;
+    padding: 1vw 2vw;
 }
 
 /* Responsive styling for smaller screens */
 @media screen and (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+
     .links {
-        min-width: 120px; /* Adjusted min-width for smaller screens */
-        background-color: #331D3F; /* Darker purple background color for links */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 6.5vw;
+        left: 0;
+        right: 0;
+        background-color: #2A243B;
+        text-align: center;
     }
 
     .links a {
-        color: #FFFFFF; /* White text color for links */
-        padding: 1.5vw 2vw; /* Increased padding for a cleaner look */
+        padding: 1.5vw 2vw;
+        border-bottom: 1px solid #6D6870;
     }
 
-    .links a:hover {
-        background-color: #6D6870; /* Darker purple background color on hover */
+    .links a:last-child {
+        border-bottom: none;
+    }
+
+    .links.active {
+        display: flex;
     }
 
     nav:hover .pagetitle {
-        background-color: #222B38; /* Darker blue-gray background color on hover */
+        background-color: #222B38;
     }
 }
 
 /* Video styling */
 .vid {
     width: 100vw;
-    height: 56.25vw; /* 16:9 aspect ratio */
+    height: 56.25vw;
     object-fit: cover;
     position: absolute;
     z-index: -1;
     top: 0;
     left: 0;
-}
-
-/* Background video styling */
-#vidbg {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    z-index: -1;
 }
 
 /* Container styling */
@@ -93,7 +108,7 @@ nav {
 
 /* Banner styling */
 .banner {
-    height: 56.25vw; /* 16:9 aspect ratio */
+    height: 56.25vw;
     background-color: rgba(17, 3, 59, 0.548);
     z-index: 9;
 }
@@ -101,60 +116,65 @@ nav {
 /* Banner head styling */
 .bannerhead {
     text-align: left;
-    padding-top: 3vw; /* Adjusted padding for a cleaner look */
+    padding-top: 3vw;
     font-family: 'Merriweather', serif;
-    color: #ABB1FF; /* Light purple banner head color */
-    font-size: 3.5vw; /* Decreased font size for a cleaner look */
+    color: #ABB1FF;
+    font-size: 3.5vw;
     text-align: center;
 }
 
 /* Article styling */
 article {
     padding-top: 1vw;
-    color: #AFB5FF; /* Light purple article text color */
-    margin-left: 56.25vw; /* 16:9 aspect ratio */
+    color: #AFB5FF;
+    margin-left: 56.25vw;
     font-size: 1.5vw;
     font-family: 'Roboto Mono', monospace;
 }
 
-/*Footer styling*/
+/* Footer styling */
 footer {
-    background-color: #2A243B;
-    padding: 2vw 0; /* Adjusted padding for a cleaner look */
     text-align: center;
+    padding: 2vw;
+    background-color: #2A243B;
 }
 
 /* Social media icons styling */
-#yt, #twitter, #fb, #soundcloud {
-    display: inline-block;
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
     width: 4vw;
     height: 4vw;
-    margin: 0 1vw; /* Adjusted margin for a cleaner look */
+    margin: 0 1vw;
 }
 
 /* YouTube icon styling */
 #yt {
     background: url('Icon/sprite3.png') no-repeat -439px -221px;
+	width: 66px;
+	height: 66px;
 }
 
 /* Twitter icon styling */
 #twitter {
     background: url('Icon/sprite3.png') no-repeat -66px -72px;
+	width: 67px;
+	height: 66px;
 }
 
 /* Facebook icon styling */
 #fb {
     background: url('Icon/sprite3.png') no-repeat -439px -146px;
+	width: 66px;
+	height: 66px;
 }
 
 /* SoundCloud icon styling */
 #soundcloud {
     background: url('Icon/sprite3.png') no-repeat -587px -72px;
-}
-
-/* Favicon styling */
-#favicon {
-    background: url('imgs/sprite3.png') no-repeat -290px -146px;
-    width: 4vw;
-    height: 4vw;
+	width: 66px;
+	height: 66px;
 }
